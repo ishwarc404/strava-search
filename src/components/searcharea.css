@@ -1,0 +1,26 @@
+.search-title {
+    margin: 1vw;
+    font-family: Helvetica;
+    font-weight: 100;
+    font-size: 1.8vw;
+    opacity: 0.7;
+}
+
+.search-field {
+    margin: 1vw;
+}
+
+.search-button {
+    margin-left: 0.5vw;
+    margin-top: 0.2vw;
+}
+
+.activities {
+    flex-wrap: wrap;
+}
+
+.activity-box {
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px #1111111f;  
+    margin: 1vw;
+}
