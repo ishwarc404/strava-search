@@ -31,10 +31,10 @@ function SearchArea() {
     const mapboxAccessToken = "pk.eyJ1IjoiaXNod2FyYzQwNCIsImEiOiJjbGY0czRwdTEwMDk2M3BqeGhxcmgxem55In0.es5t51shhzQiZqn7ldY9yw";
 
     function getMapboxImageUrl(encodedPolyline) {
-        const style = "mapbox/streets-v11"; // or any other style you prefer
-        const width = 300;  // Adjust the image size as needed
-        const height = 250; // Adjust the image size as needed
-    
+        const style = "mapbox/streets-v11"; 
+        const width = 250; 
+        const height = 200;
+
         // Decode the encoded polyline
         const decodedPolyline = decodeURIComponent(encodedPolyline);
         const urlEncodedPolyline = encodeURIComponent(decodedPolyline);
@@ -76,7 +76,7 @@ function SearchArea() {
                                     <div>{(activity.elapsedTime / 3600).toFixed(1)} hours</div>
                                     <div>{(activity.totalElevationGain ).toFixed(1)} meters</div>
                                 </div>
-                                <div>
+                                <div className='activity-map'>
                                     {activity.summaryPolyline && 
                                         <img src={getMapboxImageUrl(activity.summaryPolyline)} alt="Map Route" />
                                     }

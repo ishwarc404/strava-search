@@ -21,6 +21,13 @@
 
 .activity-box {
     background-color: white;
-    box-shadow: 1px 1px 1px 1px #1111111f;  
+    box-shadow: 1px 1px 4px 1px #1111111f;  
     margin: 1vw;
+    border-radius: 5px;
+}
+
+.activity-map {
+    margin: 0.5vw;
+    border-radius: 5px;
+    overflow: hidden;
 }
