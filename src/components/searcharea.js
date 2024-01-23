@@ -25,6 +25,8 @@ function SearchArea() {
             })
             .catch(error => {
                 console.error("Error during API call", error);
+                setSpinnerActive(false)
+
             });
     }
 
@@ -32,18 +34,38 @@ function SearchArea() {
 
     function getMapboxImageUrl(encodedPolyline) {
         const style = "mapbox/streets-v11"; 
-        const width = 250; 
-        const height = 200;
+
+        // Calculate width and height based on the viewport width
+        const viewportWidth = window.innerWidth;
+        let width, height;
+
+        // Adjust these values according to your layout needs
+        if (viewportWidth > 800) { // for larger screens
+            width = 330;
+            height = 200;
+        } else if (viewportWidth > 500) { // for medium screens
+            width = 230;
+            height = 100;
+        } else { // for smaller screens
+            width = 130;
+            height = 50;
+        }
 
         // Decode the encoded polyline
         const decodedPolyline = decodeURIComponent(encodedPolyline);
         const urlEncodedPolyline = encodeURIComponent(decodedPolyline);
 
-        const path = `path-5+fc5200(${urlEncodedPolyline})`;
+        const path = `path-3+fc5200(${urlEncodedPolyline})`;
         const baseUrl = "https://api.mapbox.com/styles/v1";
         const url = `${baseUrl}/${style}/static/${path}/auto/${width}x${height}?access_token=${mapboxAccessToken}`;
         console.log(url);
         return url;
+    }
+
+    function formatDate(dateString) {
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const date = new Date(dateString);
+        return date.toLocaleDateString('en-US', options);
     }
 
 
@@ -57,7 +79,7 @@ function SearchArea() {
                     variant='bordered'
                     label="Seach"
                     placeholder="Show me my trail runs which took me around an hour.."
-                    defaultValue=""
+                    defaultValue="show me my trail runs from 2024"
                     className="max-w-[25vw]"
                     onChange={searchQueryHandler}
                 />
@@ -65,16 +87,30 @@ function SearchArea() {
                     Search
                 </Button>  
             </div>
-            <div className="results">
+            <div className="results  d-flex justify-content-center">
                 {searchResult.length > 0 ? (
                     <div className='activities d-flex justify-content-center'>
                         {searchResult.map(activity => (
                             <div className='activity-box' key={activity.id}>
-                                <div>{activity.name}</div>
-                                <div className='d-flex justify-content-start'>
-                                    <div>{activity.distance} meters</div>
-                                    <div>{(activity.elapsedTime / 3600).toFixed(1)} hours</div>
-                                    <div>{(activity.totalElevationGain ).toFixed(1)} meters</div>
+                                <div className='activity-name d-flex justify-content-start'>{activity.name}</div>
+                                <div className='activity-date d-flex justify-content-start'>{formatDate(activity.startDate)}</div>
+                                <div className='activity-details d-flex justify-content-start'>
+                                    <div>
+                                        <div className='metric-title'>Distance</div>
+                                        <div className='activity-distance'>{(activity.distance / 1000).toFixed(1)} km</div> 
+                                    </div>
+                                    <div className='metric-divider'/>
+                                    <div>
+                                        <div className='metric-title'>Time</div>
+                                        <div className='activity-time'>
+                                            {Math.floor(activity.elapsedTime / 3600)}h {Math.floor((activity.elapsedTime % 3600) / 60)}m
+                                        </div>
+                                    </div>
+                                    <div className='metric-divider'/>
+                                    <div>
+                                        <div className='metric-title'>Elev Gain</div>
+                                        <div className='activity-elevation-gain'>{(activity.totalElevationGain ).toFixed(1)} m</div>
+                                    </div>
                                 </div>
                                 <div className='activity-map'>
                                     {activity.summaryPolyline && 
