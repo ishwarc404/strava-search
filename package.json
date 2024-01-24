@@ -1,6 +1,7 @@
 {
   "name": "strava-chat",
   "version": "0.1.0",
+  "homepage": "https://ishwarc404.github.io/activity-search",
   "private": true,
   "dependencies": {
     "@nextui-org/react": "^2.2.9",

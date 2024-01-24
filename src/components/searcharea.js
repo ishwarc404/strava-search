@@ -87,13 +87,14 @@ function SearchArea() {
                     Search
                 </Button>  
             </div>
+            <div>{searchResult.length > 0 ? searchResult.length + ' activities found.' : ''}</div>
             <div className="results  d-flex justify-content-center">
                 {searchResult.length > 0 ? (
                     <div className='activities d-flex justify-content-center'>
                         {searchResult.map(activity => (
                             <div className='activity-box' key={activity.id}>
                                 <div className='activity-name d-flex justify-content-start'>{activity.name}</div>
-                                <div className='activity-date d-flex justify-content-start'>{formatDate(activity.startDate)}</div>
+                                <div className='activity-date d-flex justify-content-start'>{activity.sportType} : {formatDate(activity.startDate)}</div>
                                 <div className='activity-details d-flex justify-content-start'>
                                     <div>
                                         <div className='metric-title'>Distance</div>
