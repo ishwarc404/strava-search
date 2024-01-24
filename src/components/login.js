@@ -2,6 +2,7 @@
 import './login.css';
 import { useEffect, useState } from 'react';
 import connectwithstrava from '../assets/btn_strava_connectwith_orange.svg'
+import axios from 'axios';
 
 function Login( {logIn} ) {
 
