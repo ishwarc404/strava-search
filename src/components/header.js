@@ -1,15 +1,25 @@
+import { user } from '@nextui-org/react';
 import summitslogo from '../assets/summits_logo_half.png'
 import './header.css';
+import {Button} from "@nextui-org/react";
 
-function Header() {
+function Header( {userInfo} ) {
   return (
     <div className="header d-flex justify-content-start">
         <div>
             <img className='header-logo' src={summitslogo}></img>
         </div>
-        {/* <div className='header-title'>
-            STRAVA ASSISTANT
-        </div> */}
+        <div className='search-title'>
+             {userInfo.firstname} {userInfo.lastname}
+        </div>
+        <div style={{ marginTop: '1vw', marginLeft: 'auto' }}>
+            <div className='d-flex justify-content-end' style={{ marginBottom: '0.5vw'}}>
+                <Button color='secondary' variant='bordered'>Log out</Button>
+            </div>
+            <div>
+                <Button color='danger' variant='bordered'>Log out & delete my data</Button>
+            </div>
+        </div>
     </div>
   );
 }

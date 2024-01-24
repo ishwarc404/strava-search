@@ -1,11 +1,11 @@
 import './searcharea.css';
 import React, { useEffect, useState } from "react";
 import { Input } from "@nextui-org/react";
-import {Button, ButtonGroup} from "@nextui-org/react";
+import {Button} from "@nextui-org/react";
 import axios from 'axios';
 import {Spinner} from "@nextui-org/react";
 
-function SearchArea() {
+function SearchArea({athleteId}) {
     const [spinnerActive, setSpinnerActive] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const [searchResult, setSearchResult] = useState([]);
@@ -16,7 +16,7 @@ function SearchArea() {
 
     function handleSearchClick() {
         setSpinnerActive(true)
-        const requestData = { query: searchQuery };
+        const requestData = { athleteId: athleteId, query: searchQuery };
         
         axios.post('https://strava-chat-backend-little-frost-1318.fly.dev/search', requestData)
             .then(response => {
