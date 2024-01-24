@@ -1,14 +1,9 @@
 
 import './login.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import connectwithstrava from '../assets/btn_strava_connectwith_orange.svg'
 
-function Login() {
-
-
- function loginwithstrava(){
-
- }
+function Login( {logIn} ) {
 
  const stravaAuthUrl = `https://www.strava.com/oauth/authorize?client_id=89361&redirect_uri=https://ishwarc404.github.io/strava-search/&response_type=code&scope=read,activity:read`;
 
@@ -19,6 +14,7 @@ function Login() {
     const code = queryParams.get('code');
 
     if (code) {
+        logIn(true);
         console.log("Authorization Code:", code);
     }
 }, []);
