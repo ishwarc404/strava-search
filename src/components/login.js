@@ -10,7 +10,7 @@ function Login() {
 
  }
 
- const stravaAuthUrl = `https://www.strava.com/oauth/authorize?client_id=89361&redirect_uri=https://ishwarc404.github.io/&response_type=code&scope=read,activity:read`;
+ const stravaAuthUrl = `https://www.strava.com/oauth/authorize?client_id=89361&redirect_uri=https://ishwarc404.github.io/activity-search/&response_type=code&scope=read,activity:read`;
 
 
   return (
