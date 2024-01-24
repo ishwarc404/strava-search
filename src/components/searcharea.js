@@ -86,7 +86,7 @@ function SearchArea({athleteId}) {
                     Search
                 </Button>  
             </div>
-            <div className='activities-found'>{searchResult.length > 0 ? searchResult.length + ' activities found.' : ''}</div>
+            <div className='activities-found'>{searchResult.length > 0 ? searchResult.length + ' activities found.' : 'No results found, try again please.'}</div>
             <div className="results  d-flex justify-content-center">
                 {searchResult.length > 0 ? (
                     <div className='activities d-flex justify-content-center'>
@@ -121,7 +121,7 @@ function SearchArea({athleteId}) {
                         ))}
                     </div>
                 ) : (
-                    <p>No results found</p>
+                    <p></p>
                 )}
             </div>
             <div>
