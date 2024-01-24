@@ -1,6 +1,6 @@
 
 import './login.css';
-
+import { useEffect } from 'react';
 import connectwithstrava from '../assets/btn_strava_connectwith_orange.svg'
 
 function Login() {
@@ -10,8 +10,18 @@ function Login() {
 
  }
 
- const stravaAuthUrl = `https://www.strava.com/oauth/authorize?client_id=89361&redirect_uri=https://ishwarc404.github.io/activity-search/&response_type=code&scope=read,activity:read`;
+ const stravaAuthUrl = `https://www.strava.com/oauth/authorize?client_id=89361&redirect_uri=https://ishwarc404.github.io/strava-search/&response_type=code&scope=read,activity:read`;
 
+
+ useEffect(() => {
+    // Parse the URL query parameters
+    const queryParams = new URLSearchParams(window.location.search);
+    const code = queryParams.get('code');
+
+    if (code) {
+        console.log("Authorization Code:", code);
+    }
+}, []);
 
   return (
     <div className="Login">
