@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/strava-search/static/css/main.f6310850.css",
-    "main.js": "/strava-search/static/js/main.01fe7972.js",
+    "main.js": "/strava-search/static/js/main.ea7ce7b7.js",
     "static/js/787.f0e5f6fb.chunk.js": "/strava-search/static/js/787.f0e5f6fb.chunk.js",
     "static/media/summits_logo_half.png": "/strava-search/static/media/summits_logo_half.730e703a1ccde9d8dbb6.png",
     "static/media/btn_strava_connectwith_orange.svg": "/strava-search/static/media/btn_strava_connectwith_orange.d61a51baedcfa2ed12801e956175a0ba.svg",
     "static/media/logo.svg": "/strava-search/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/strava-search/index.html",
     "main.f6310850.css.map": "/strava-search/static/css/main.f6310850.css.map",
-    "main.01fe7972.js.map": "/strava-search/static/js/main.01fe7972.js.map",
+    "main.ea7ce7b7.js.map": "/strava-search/static/js/main.ea7ce7b7.js.map",
     "787.f0e5f6fb.chunk.js.map": "/strava-search/static/js/787.f0e5f6fb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f6310850.css",
-    "static/js/main.01fe7972.js"
+    "static/js/main.ea7ce7b7.js"
   ]
 }
