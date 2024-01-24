@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header userInfo={userInfo}/>
+      <Header userInfo={userInfo} logOut = {setLoggedIn}/>
       
       {loggedIn ? <SearchArea athleteId={userInfo.id}/> : <Login logIn = {setLoggedIn} setUser={setUserInfo}/>}
     </div>
