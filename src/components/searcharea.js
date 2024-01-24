@@ -18,7 +18,7 @@ function SearchArea() {
         setSpinnerActive(true)
         const requestData = { query: searchQuery };
         
-        axios.post('http://127.0.0.1:5000/search', requestData)
+        axios.post('https://strava-chat-backend-little-frost-1318.fly.dev/search', requestData)
             .then(response => {
                 setSearchResult(response.data.filterActivity);
                 setSpinnerActive(false)
