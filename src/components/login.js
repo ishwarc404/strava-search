@@ -18,10 +18,8 @@ function Login( {logIn, setUser} ) {
 
     if (code) {
         setSpinnerActive(true)
-        console.log("Authorization Code:", code);
         axios.post('https://strava-chat-backend-little-frost-1318.fly.dev/login', { auth_code: code })
         .then(response => {
-            console.log(response.data)
             setUser(response.data)
             setSpinnerActive(false)
             logIn(true);

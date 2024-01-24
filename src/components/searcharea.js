@@ -58,7 +58,6 @@ function SearchArea({athleteId}) {
         const path = `path-3+fc5200(${urlEncodedPolyline})`;
         const baseUrl = "https://api.mapbox.com/styles/v1";
         const url = `${baseUrl}/${style}/static/${path}/auto/${width}x${height}?access_token=${mapboxAccessToken}`;
-        console.log(url);
         return url;
     }
 
