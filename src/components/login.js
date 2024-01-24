@@ -3,10 +3,12 @@ import './login.css';
 import { useEffect, useState } from 'react';
 import connectwithstrava from '../assets/btn_strava_connectwith_orange.svg'
 import axios from 'axios';
+import {Spinner} from "@nextui-org/react";
 
 function Login( {logIn, setUser} ) {
 
- const stravaAuthUrl = `https://www.strava.com/oauth/authorize?client_id=89361&redirect_uri=https://ishwarc404.github.io/strava-search/&response_type=code&scope=read,activity:read`;
+    const [spinnerActive, setSpinnerActive] = useState(false)
+    const stravaAuthUrl = `https://www.strava.com/oauth/authorize?client_id=89361&redirect_uri=https://ishwarc404.github.io/strava-search/&response_type=code&scope=read,activity:read`;
 
 
  useEffect(() => {
@@ -15,11 +17,13 @@ function Login( {logIn, setUser} ) {
     const code = queryParams.get('code');
 
     if (code) {
+        setSpinnerActive(true)
         console.log("Authorization Code:", code);
         axios.post('https://strava-chat-backend-little-frost-1318.fly.dev/login', { auth_code: code })
         .then(response => {
             console.log(response.data)
             setUser(response.data)
+            setSpinnerActive(false)
             logIn(true);
         })
         .catch(error => {
@@ -36,6 +40,11 @@ function Login( {logIn, setUser} ) {
                 <img src={connectwithstrava}></img>
             </button>
         </a>
+        <div>
+        {
+            spinnerActive ? ( <Spinner /> ) : ''
+        }
+        </div>
     </div>
   );
 }

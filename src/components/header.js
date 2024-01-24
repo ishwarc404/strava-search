@@ -18,14 +18,17 @@ function Header( {userInfo} ) {
 
         : ''
         }
-        <div style={{ marginTop: '1vw', marginLeft: 'auto' }}>
+         {
+        userInfo ? 
+        (<div style={{ marginTop: '1vw', marginLeft: 'auto' }}>
             <div className='d-flex justify-content-end' style={{ marginBottom: '0.5vw'}}>
                 <Button color='secondary' variant='bordered'>Log out</Button>
             </div>
             <div>
                 <Button color='danger' variant='bordered'>Log out & delete my data</Button>
             </div>
-        </div>
+        </div>) : '' }
+        
     </div>
   );
 }
