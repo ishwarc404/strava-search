@@ -9,9 +9,15 @@ function Header( {userInfo} ) {
         <div>
             <img className='header-logo' src={summitslogo}></img>
         </div>
-        <div className='search-title'>
+        {
+        userInfo ? 
+        
+       ( <div className='search-title'>
              {userInfo.firstname} {userInfo.lastname}
-        </div>
+        </div> )
+
+        : ''
+        }
         <div style={{ marginTop: '1vw', marginLeft: 'auto' }}>
             <div className='d-flex justify-content-end' style={{ marginBottom: '0.5vw'}}>
                 <Button color='secondary' variant='bordered'>Log out</Button>
