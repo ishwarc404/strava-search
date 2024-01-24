@@ -22,7 +22,7 @@ function App() {
     <div className="App">
       <Header userInfo={userInfo} logIn={setLoggedIn} setUserInfo={setUserInfo}/>
       
-      {loggedIn ? <SearchArea athleteId={userInfo.id}/> : <Login logIn = {setLoggedIn} setUser={setUserInfo}/>}
+      {loggedIn ? <SearchArea athleteId={userInfo.id}/> : <Login logIn={setLoggedIn} setUser={setUserInfo}/>}
     </div>
   );
 }

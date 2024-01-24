@@ -6,6 +6,7 @@ import {Button} from "@nextui-org/react";
 function Header( {userInfo, logIn, setUserInfo} ) {
 
     function handleLogOutSimple(){
+        window.location = ''
         setUserInfo(null);
         logIn(false);
     }
