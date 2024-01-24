@@ -14,15 +14,22 @@ function Login( {logIn} ) {
     const code = queryParams.get('code');
 
     if (code) {
-        logIn(true);
         console.log("Authorization Code:", code);
+        axios.post('https://strava-chat-backend-little-frost-1318.fly.dev/login', { auth_code: code })
+        .then(response => {
+            console.log(response.data)
+            logIn(true);
+        })
+        .catch(error => {
+            logIn(false);
+        });
     }
 }, []);
 
   return (
     <div className="Login">
         <div className='search-title d-flex justify-content-center'>Explore your activities, your way.</div>
-        <a href={stravaAuthUrl} target='_blank' rel='noopener noreferrer'>
+        <a href={stravaAuthUrl} rel='noopener noreferrer'>
             <button>
                 <img src={connectwithstrava}></img>
             </button>

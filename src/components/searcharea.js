@@ -87,7 +87,7 @@ function SearchArea() {
                     Search
                 </Button>  
             </div>
-            <div>{searchResult.length > 0 ? searchResult.length + ' activities found.' : ''}</div>
+            <div className='activities-found'>{searchResult.length > 0 ? searchResult.length + ' activities found.' : ''}</div>
             <div className="results  d-flex justify-content-center">
                 {searchResult.length > 0 ? (
                     <div className='activities d-flex justify-content-center'>
