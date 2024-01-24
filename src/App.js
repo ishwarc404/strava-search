@@ -16,11 +16,11 @@ import { useState } from 'react';
 function App() {
 
   const [loggedIn, setLoggedIn] = useState(false);
-  const [userInfo, setUserInfo] = useState(null)
+  const [userInfo, setUserInfo] = useState()
 
   return (
     <div className="App">
-      <Header userInfo={userInfo} logOut = {setLoggedIn}/>
+      <Header userInfo={userInfo} logIn={setLoggedIn} setUserInfo={setUserInfo}/>
       
       {loggedIn ? <SearchArea athleteId={userInfo.id}/> : <Login logIn = {setLoggedIn} setUser={setUserInfo}/>}
     </div>

@@ -3,7 +3,12 @@ import summitslogo from '../assets/summits_logo_half.png'
 import './header.css';
 import {Button} from "@nextui-org/react";
 
-function Header( {userInfo, logOut} ) {
+function Header( {userInfo, logIn, setUserInfo} ) {
+
+    function handleLogOutSimple(){
+        setUserInfo(null);
+        logIn(false);
+    }
   return (
     <div className="header d-flex justify-content-start">
         <div>
@@ -22,7 +27,7 @@ function Header( {userInfo, logOut} ) {
         userInfo ? 
         (<div style={{ marginTop: '1vw', marginLeft: 'auto' }}>
             <div className='d-flex justify-content-end' style={{ marginBottom: '0.5vw'}}>
-                <Button color='secondary' variant='bordered'>Log out</Button>
+                <Button color='secondary' variant='bordered' onPress={handleLogOutSimple}>Log out</Button>
             </div>
             <div>
                 <Button color='danger' variant='bordered'>Log out & delete my data</Button>
