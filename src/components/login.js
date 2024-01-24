@@ -45,6 +45,16 @@ function Login( {logIn, setUser} ) {
             spinnerActive ? ( <Spinner /> ) : ''
         }
         </div>
+        <div>
+        {
+            spinnerActive ? (
+          <div>
+             <div>Downloading your data can a take few minutes, you will be redirected once it is downloaded. </div>
+            <div>We download the latest 1000 activities. You can always delete them, don't worry.</div>
+          </div>
+            ) : ''
+        }
+        </div>
     </div>
   );
 }
