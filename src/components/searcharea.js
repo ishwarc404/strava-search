@@ -78,7 +78,7 @@ function SearchArea({athleteId}) {
                     variant='bordered'
                     label="Seach"
                     placeholder="Show me my trail runs which took me around an hour.."
-                    defaultValue="show me my trail runs from 2024"
+                    defaultValue="show me my trail runs from 2023"
                     className="max-w-[25vw]"
                     onChange={searchQueryHandler}
                 />
