@@ -4,6 +4,7 @@ import SearchArea from './components/searcharea';
 import Header from './components/header';
 import Login from './components/login';
 import { useState } from 'react';
+import Snippets from './components/snippets';
 
 
 // {"id": 43290018, "username": "ishwarc404", "resource_state": 2, "firstname": "Ishwar", "lastname": "Choudhary", "bio":
@@ -23,6 +24,15 @@ function App() {
       <Header userInfo={userInfo} logIn={setLoggedIn} setUserInfo={setUserInfo}/>
       
       {loggedIn ? <SearchArea athleteId={userInfo.id}/> : <Login logIn={setLoggedIn} setUser={setUserInfo}/>}
+
+     {loggedIn ? '' : <Snippets/>} 
+
+
+     {loggedIn ? '' : (
+      <div className='d-flex justify-content-center built-by'>
+        <a href='https://www.linkedin.com/in/ishwarchoudhary/' target='_blank'>Built by Ishwar Choudhary, 2024.</a>
+      </div>
+     )}
     </div>
   );
 }

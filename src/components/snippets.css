@@ -1,0 +1,28 @@
+.Snippets {
+    margin-top: 5vw;
+    /* width: 70vw; */
+    flex-wrap: wrap;
+}
+.card-1 {
+    margin: 0.5vw;
+    background-color: rgba(127, 255, 153, 0.709);
+    /* max-width: 20vw; */
+}
+
+.card-2 {
+    margin: 0.5vw;
+    background-color: rgba(135, 177, 239, 0.709);
+    /* max-width: 24vw; */
+}
+
+.card-3 {
+    margin: 0.5vw;
+    background-color: rgba(245, 136, 225, 0.709);
+    /* max-width: 24vw; */
+}
+
+.card-4 {
+    margin: 0.5vw;
+    background-color: rgba(245, 169, 136, 0.709);
+    /* max-width: 24vw; */
+}
