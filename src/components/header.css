@@ -15,3 +15,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2vw;
 }
+
+.logout-modal-body {
+    margin: 1vw;
+}
