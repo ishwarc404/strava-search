@@ -21,7 +21,7 @@ function Header( {userInfo, logIn, setUserInfo} ) {
     }
 
     function handleLogOutSimple(){
-        window.location = ''
+        window.location.search = ''
         setUserInfo(null);
         logIn(false);
     }
