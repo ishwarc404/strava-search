@@ -20,11 +20,13 @@ function Header( {userInfo, logIn, setUserInfo} ) {
         })
     }
 
-    function handleLogOutSimple(){
-        window.location.search = ''
+    function handleLogOutSimple() {
+        const baseUrl = window.location.href.split('?')[0];
+        window.location.href = baseUrl;
         setUserInfo(null);
         logIn(false);
     }
+    
   return (
     <div className="header d-flex justify-content-start">
         <div>
