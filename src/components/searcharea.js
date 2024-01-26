@@ -92,7 +92,11 @@ function SearchArea({athleteId}) {
                     <div className='activities d-flex justify-content-center'>
                         {searchResult.map(activity => (
                             <div className='activity-box' key={activity.id}>
-                                <div className='activity-name d-flex justify-content-start'>{activity.name}</div>
+                                <div className='activity-name d-flex justify-content-start'>
+                                    <a href={'https://strava.com/activities/' + activity.id} target='_blank'>
+                                    {activity.name}
+                                    </a>
+                                </div>
                                 <div className='activity-date d-flex justify-content-start'>{activity.sportType} : {formatDate(activity.startDate)}</div>
                                 <div className='activity-details d-flex justify-content-start'>
                                     <div>
