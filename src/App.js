@@ -29,8 +29,12 @@ function App() {
 
 
      {loggedIn ? '' : (
-      <div className='d-flex justify-content-center built-by'>
+      <div className='built-by'>
+             <div>Currently inactive due to database costs. Please email me if you would like to use it. <i>ishwarc404@gmail.com</i></div>
+
+      <div className='d-flex justify-content-center'>
         <a href='https://www.linkedin.com/in/ishwarchoudhary/' target='_blank'>Built by Ishwar Choudhary, 2024.</a>
+      </div>
       </div>
      )}
     </div>
